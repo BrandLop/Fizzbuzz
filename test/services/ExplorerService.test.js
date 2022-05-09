@@ -18,4 +18,10 @@ describe("Tests for ExplorerService", () => {
     const amountExplorersinNode = ExplorerService.getAmountOfExplorersByMission(explorers, 'node')
     expect(amountExplorersinNode).toBe(10)
   });
+  
+  test("Explorers usernames by mission", () => {
+    const explorersusernamesbymission = ExplorerService.getExplorersUsernamesByMission(explorers, 'node')
+    const expected = ['ajolonauta1','ajolonauta2','ajolonauta3','ajolonauta4','ajolonauta5','ajolonauta11','ajolonauta12','ajolonauta13','ajolonauta14','ajolonauta15']
+    expect(explorersusernamesbymission).toEqual(expect.arrayContaining(expected))
+  });
 });
