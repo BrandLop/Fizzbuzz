@@ -13,4 +13,9 @@ describe("Tests for ExplorerService", () => {
       stacks: expect.any(Array)
     })
   });
+
+  test("Amount of explorers by mission", () => {
+    const amountExplorersinNode = ExplorerService.getAmountOfExplorersByMission(explorers, 'node')
+    expect(amountExplorersinNode).toBe(10)
+  });
 });
