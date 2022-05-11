@@ -1,5 +1,5 @@
-const ExplorerService = require("./../../lib/services/ExplorerService");
-const Reader = require("./../../lib/utils/Reader");
+const ExplorerService = require("./../../../lib/services/ExplorerService");
+const Reader = require("./../../../lib/utils/Reader");
 const explorers = Reader.readerJsonFile("./explorers.json");
 
 describe("Tests for ExplorerService", () => {
