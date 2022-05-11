@@ -76,4 +76,10 @@ describe("Tests for ExplorerController", () => {
             }
         ]);
     });
+
+    test("Get explorers user names by mission", () => {
+        const explorersusernames = ExplorerController.getExplorersUsernamesByMission("node");
+        const expected = ["ajolonauta1","ajolonauta2","ajolonauta3","ajolonauta4","ajolonauta5","ajolonauta11","ajolonauta12","ajolonauta13","ajolonauta14","ajolonauta15"];
+        expect(explorersusernames).toEqual(expect.arrayContaining(expected));
+    });
 });
