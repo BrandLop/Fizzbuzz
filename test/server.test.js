@@ -9,6 +9,86 @@ describe("GET taks", () => {
         expect(response.body).toMatchObject({message: "FizzBuzz Api welcome!"});
     });
 
+    test("Should return a list of explorers filtered by mission", async () => {
+        const response = await request(app)
+            .get("/v1/explorers/node");
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toMatchObject([
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/node/),
+                stacks: expect.any(Array)
+            }
+        ]);
+
+
+    });
+
     afterAll(() => {
         server.close();
     });
