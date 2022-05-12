@@ -9,7 +9,7 @@ describe("GET taks", () => {
         expect(response.body).toMatchObject({message: "FizzBuzz Api welcome!"});
     });
 
-    test("Should return a list of explorers filtered by mission", async () => {
+    test("Should return a list of explorers filtered by node mission", async () => {
         const response = await request(app)
             .get("/v1/explorers/node");
         expect(response.statusCode).toEqual(200);
@@ -85,8 +85,49 @@ describe("GET taks", () => {
                 stacks: expect.any(Array)
             }
         ]);
+    });
 
-
+    test("Should return a list of explorers filtered by java mission", async () => {
+        const response = await request(app)
+            .get("/v1/explorers/java");
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toMatchObject([
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/java/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/java/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/java/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/java/),
+                stacks: expect.any(Array)
+            },
+            {
+                name: expect.any(String),
+                githubUsername: expect.any(String),
+                score: expect.any(Number),
+                mission: expect.stringMatching(/java/),
+                stacks: expect.any(Array)
+            }
+        ]);
     });
 
     afterAll(() => {
