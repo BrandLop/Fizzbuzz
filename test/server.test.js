@@ -130,6 +130,20 @@ describe("GET taks", () => {
         ]);
     });
 
+    test("Should return an object with mission node and its explorers amount", async () => {
+        const response = await request(app)
+            .get("/v1/explorers/amount/node");
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toMatchObject({mission: expect.stringMatching(/node/), quantity: 10});
+    });
+
+    test("Should return an object with mission java and its explorers amount", async () => {
+        const response = await request(app)
+            .get("/v1/explorers/amount/java");
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toMatchObject({mission: expect.stringMatching(/java/), quantity: 5});
+    });
+
     afterAll(() => {
         server.close();
     });
